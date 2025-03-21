@@ -6,9 +6,10 @@ class Zombie(Character):
         super().__init__(mana, hp, weapon)
         self.__skill_name = 'Укус'
         self.__attack = attack
+        self.name = "Зомби"
 
     def attack(self, other):
-        other.set_hp(other.get_hp() - ceil(self.get_weapon().damage * 1.5))
+        other.set_hp(other.get_hp() - ceil(self.get_attack() * 1.5))
     
     def skill(self, other):
         other.set_hp(other.get_hp() - ceil(self.__attack * 1.5))
